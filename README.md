@@ -1,4 +1,4 @@
-```markdown
+
 # GUVI GPT Model Deployment using Hugging Face
 # Hugging face LLM space link:[madmi/GVUI_final_project](https://huggingface.co/spaces/madmi/GVUI_final_project)
 ## Project Overview
@@ -146,4 +146,3 @@ Provide comprehensive documentation outlining setup, deployment, and usage instr
 
 ## Conclusion
 By following the above steps, you will successfully deploy a fine-tuned GPT model using Hugging Face services and make it accessible through a secure and scalable web application built with Streamlit or Gradio. This project will enhance your skills in deep learning, transformers, LLMs, and web application deployment in the AIOps domain.
-```
