@@ -41,34 +41,34 @@ if st.button("Generate"):
         for i, generated_text in enumerate(generated_texts):
             st.subheader(f"Generated Text {i + 1}")
             st.write(generated_text)
-# # Define the text generation function
-# def generate_text(model, tokenizer, seed_text, max_length=100, temperature=1.0, num_return_sequences=1):
-#     # Tokenize the input text
-#     input_ids = tokenizer.encode(seed_text, return_tensors='pt').to(device)
+# Define the text generation function
+ def generate_text(model, tokenizer, seed_text, max_length=100, temperature=1.0, num_return_sequences=1):
+     # Tokenize the input text
+     input_ids = tokenizer.encode(seed_text, return_tensors='pt').to(device)
 
-#     # Generate text
-#     with torch.no_grad():
-#         output = model.generate(
-#             input_ids,
-#             max_length=max_length,
-#             temperature=temperature,
-#             num_return_sequences=num_return_sequences,
-#             do_sample=True,
-#             top_k=50,
-#             top_p=0.95,
-#         )
+     # Generate text
+     with torch.no_grad():
+         output = model.generate(
+             input_ids,
+             max_length=max_length,
+             temperature=temperature,
+             num_return_sequences=num_return_sequences,
+             do_sample=True,
+             top_k=50,
+             top_p=0.95,
+         )
 
-#     # Decode the generated text
-#     generated_texts = []
-#     for i in range(num_return_sequences):
-#         generated_text = tokenizer.decode(output[i], skip_special_tokens=True)
-#         generated_texts.append(generated_text)
+     # Decode the generated text
+     generated_texts = []
+     for i in range(num_return_sequences):
+         generated_text = tokenizer.decode(output[i], skip_special_tokens=True)
+         generated_texts.append(generated_text)
 
-#     return generated_texts
+     return generated_texts
 
-# # Test the model
-# seed_text = "GUVI is a"
-# generated_texts = generate_text(model, tokenizer, seed_text, max_length=100, temperature=0.4, num_return_sequences=1)
-# st.write(generated_texts)
-# # for i, text in enumerate(generated_texts):
-# #     print(f"Generated Text {i + 1}:\n{text}\n")
+ # Test the model
+ seed_text = "GUVI is a"
+ generated_texts = generate_text(model, tokenizer, seed_text, max_length=100, temperature=0.4, num_return_sequences=1)
+ st.write(generated_texts)
+ for i, text in enumerate(generated_texts):
+      print(f"Generated Text {i + 1}:\n{text}\n")
